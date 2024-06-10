@@ -1,3 +1,6 @@
+import { Order } from "@/dtos/Order.dto";
+import { Rider } from "@/dtos/Rider.dto";
+
 export function getRandomId() {
   const length = 5;
   let result = "";
@@ -12,3 +15,12 @@ export function getRandomId() {
 export function getRandomInterval(min: number, max: number) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+export function findOrder(orderId: any, orderList: Order[]) {
+  const resultado = orderList.find((order) => order.id === orderId)
+  return resultado
+}
+
+
+
+//crear getrandomitem, etc

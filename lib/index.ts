@@ -16,7 +16,7 @@ export class OrderOrchestrator {
       this.emit({
         id: getRandomId(),
         state: "PENDING",
-        items: [],
+        items: [{ id: '1', name: 'patatas', image: 'dfsaifhdsakj', price: { amount: 200, currency: 'euros' } }],
       });
       this.maxOrders--;
       if (this.maxOrders <= 0) {

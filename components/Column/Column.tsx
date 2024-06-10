@@ -15,6 +15,7 @@ export default function Column(props: ColumnProps) {
       </div>
       {props.orders.map((order) => (
         <div
+          key={order.id}
           onClick={() => props.onClick && props.onClick(order)}
           className={s["pk-card"]}
         >
@@ -25,7 +26,8 @@ export default function Column(props: ColumnProps) {
           </div>
           <div>
             {order.items.map((item) => (
-              <div></div>
+              //Vigilar aqui que tienes que probar item.cosas
+              <div key={item.id}>{item.name}</div>
             ))}
           </div>
         </div>

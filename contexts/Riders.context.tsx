@@ -37,7 +37,10 @@ export function RidersProvider(props: RidersProviderProps) {
           {
             orderWanted: order.id,
             pickup,
+            deliver,
+            delivered: false
           },
+
         ]);
       }, getRandomInterval(4_000, 10_000));
     }

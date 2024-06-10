@@ -34,9 +34,11 @@ export function OrdersProvider(props: OrdersProviderProps) {
   }, []);
 
   const pickup = (order: Order) => {
-    alert(
-      "necesitamos eliminar del kanban a la orden recogida! Rapido! antes que nuestra gente de tienda se confunda!"
-    );
+    console.log(order)
+    order.state = "DELIVERED"
+    // alert(
+    //   "necesitamos eliminar del kanban a la orden recogida! Rapido! antes que nuestra gente de tienda se confunda!"
+    // );
   };
 
   const context = {
