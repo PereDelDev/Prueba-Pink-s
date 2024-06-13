@@ -6,9 +6,8 @@ import { useOrders } from "@/contexts/Orders.context";
 export default function Rider(props: RiderProps) {
   const { orders } = useOrders()
   let ready = 'pk-rider__order'
-  let state = checkState(findOrder(props.orderWanted, orders)!)
-  if (state) {
-    ready = 'pk-rider-ready__order'
+  if (checkState(findOrder(props.orderWanted, orders)!)) {
+    ready = 'pk-rider__order-ready'
   }
   return (
     <div onClick={() => props.pickup(findOrder(props.orderWanted, orders)!)}

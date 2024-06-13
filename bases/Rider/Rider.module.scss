@@ -46,25 +46,7 @@
     animation: appear 300ms 1000ms forwards;
   }
 
-  animation: animation 1000ms;
-}
-
-.pk-rider-ready {
-  height: 100px;
-
-  &__container {
-    width: 100px;
-    height: 100px;
-    position: relative;
-
-    &:hover {
-      opacity: 0.8;
-      transform: scale(0.98);
-      cursor: pointer;
-    }
-  }
-
-  &__order {
+  &__order-ready {
     position: absolute;
     top: -5px;
     right: -35px;
