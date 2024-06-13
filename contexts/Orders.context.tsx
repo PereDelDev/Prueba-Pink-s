@@ -1,4 +1,5 @@
 import { Order } from "@/dtos/Order.dto";
+import { Rider } from "@/dtos/Rider.dto";
 import { OrderOrchestrator } from "@/lib";
 import {
   ReactNode,
@@ -34,12 +35,15 @@ export function OrdersProvider(props: OrdersProviderProps) {
   }, []);
 
   const pickup = (order: Order) => {
-    console.log(order)
-    order.state = "DELIVERED"
-    // alert(
-    //   "necesitamos eliminar del kanban a la orden recogida! Rapido! antes que nuestra gente de tienda se confunda!"
-    // );
+    if (order.state === 'READY') {
+      order.state = 'DELIVERED'
+    } else {
+      alert('El pedido no esta listo')
+    }
+    //TODO Mejorar La alerta para que quede mas cuidada
   };
+
+
 
   const context = {
     orders,

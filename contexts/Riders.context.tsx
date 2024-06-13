@@ -22,6 +22,8 @@ export type RidersProviderProps = {
   children: ReactNode;
 };
 
+
+
 export function RidersProvider(props: RidersProviderProps) {
   const [riders, setRiders] = useState<Array<Rider>>([]);
   const [assignedOrders, setAssignedOrders] = useState<string[]>([]);
@@ -37,8 +39,6 @@ export function RidersProvider(props: RidersProviderProps) {
           {
             orderWanted: order.id,
             pickup,
-            deliver,
-            delivered: false
           },
 
         ]);
@@ -46,7 +46,9 @@ export function RidersProvider(props: RidersProviderProps) {
     }
   }, [orders]);
 
-  const context = { riders };
+  const context = {
+    riders,
+  };
   return (
     <RidersContext.Provider value={context}>
       {props.children}

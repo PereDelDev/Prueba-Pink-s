@@ -1,15 +1,19 @@
 import { Rider as RiderProps } from "@/dtos/Rider.dto";
 import s from "./Rider.module.scss";
-import { findOrder } from "@/lib/utils";
+import { checkState, findOrder } from "@/lib/utils";
 import { useOrders } from "@/contexts/Orders.context";
+
 export default function Rider(props: RiderProps) {
   const { orders } = useOrders()
+  let ready = 'pk-rider__order'
+  let state = checkState(findOrder(props.orderWanted, orders)!)
+  if (state) {
+    ready = 'pk-rider-ready__order'
+  }
   return (
-    <div onClick={() => {
-      props.pickup(findOrder(props.orderWanted, orders));
-      props.deliver()
-    }} className={s["pk-rider__container"]}>
-      <div className={s["pk-rider__order"]}>
+    <div onClick={() => props.pickup(findOrder(props.orderWanted, orders)!)}
+      className={s["pk-rider__container"]}>
+      <div className={s[ready]}>
         <b>{props.orderWanted} !!</b>
       </div>
       <svg
