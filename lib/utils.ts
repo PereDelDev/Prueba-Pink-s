@@ -32,11 +32,11 @@ export function getRandomNumber() {
 
 export function getRandomItems() {
   let items: Item[] = []
-  items.push(({ id: '1', name: 'Hamburguesa', image: '🍔', price: { amount: 9, currency: 'euros' }, cantidad: getRandomNumber() }))
+  items.push(({ id: '1', name: 'Hamburguesas', image: '🍔', price: { amount: 9, currency: 'euros' }, cantidad: getRandomNumber() }))
 
   items.push(({ id: '2', name: 'Patatas', image: '🍟', price: { amount: 3.50, currency: 'euros' }, cantidad: getRandomNumber() }))
 
-  items.push(({ id: '3', name: 'CocaCola', image: '🥤', price: { amount: 2.50, currency: 'euros' }, cantidad: getRandomNumber() }))
+  items.push(({ id: '3', name: 'CocaColas', image: '🥤', price: { amount: 2.50, currency: 'euros' }, cantidad: getRandomNumber() }))
 
 
   return items

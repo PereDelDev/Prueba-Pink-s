@@ -1,0 +1,27 @@
+@import "/styles/variables.scss";
+
+.seccion {
+    border-radius: 12px;
+    padding: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border: 1px solid $gray-800;
+    background-color: $gray-900;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.back {
+    justify-content: end;
+    display: flex;
+
+    & button {
+        border: none;
+        color: red;
+        font-size: 35px;
+        text-align: right;
+        cursor: pointer;
+        font-weight: bolder;
+    }
+
+}
