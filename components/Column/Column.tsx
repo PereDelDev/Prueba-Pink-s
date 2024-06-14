@@ -1,3 +1,4 @@
+
 import s from "./Column.module.scss";
 import { Order } from "@/dtos/Order.dto";
 
@@ -27,7 +28,7 @@ export default function Column(props: ColumnProps) {
           <div>
             {order.items.map((item) => (
               //Vigilar aqui que tienes que probar item.cosas
-              <div key={item.id}>{item.name}</div>
+              <div key={item.id}>{item.cantidad}{item.name}.......{item.price.amount * item.cantidad}€{item.image}</div>
             ))}
           </div>
         </div>
