@@ -10,4 +10,29 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  &:nth-child(3) {
+    margin-top: 20px;
+  }
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+
+  & button {
+    border: none;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+  }
+
+
+  &__confirm {
+    background-color: #4e845c;
+  }
+
+  &__back {
+    background-color: #e16557;
+  }
 }

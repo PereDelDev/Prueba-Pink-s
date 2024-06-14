@@ -16,11 +16,12 @@ export type ModalProps = {
 export default function Modal(props: ModalProps) {
     if (!props.open) return null
 
-    return (<section className={s['seccion']}>
-        <div className={s['back']}><button onClick={props.back}>X</button></div>
-        {props.children}
+    return (
+        <><div className={s['background']}></div><section className={s['seccion']}>
+            <div className={s['back']}><button onClick={props.back}>X</button></div>
+            {props.children}
 
-    </section>)
+        </section></>)
 
 
 

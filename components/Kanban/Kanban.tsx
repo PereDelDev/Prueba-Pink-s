@@ -32,25 +32,27 @@ export default function Kanban() {
             </ul>
           ))
           }
-          <div><button onClick={() => {
-            if (selectedOrder.state === 'IN_PROGRESS') {
-              selectedOrder.state = 'PENDING'
+          <div className={s["modal-footer"]}>
+            <button className={s["modal-footer__back"]} onClick={() => {
+              if (selectedOrder.state === 'IN_PROGRESS') {
+                selectedOrder.state = 'PENDING'
 
-            } else if (selectedOrder.state === 'READY') {
-              selectedOrder.state = 'IN_PROGRESS'
+              } else if (selectedOrder.state === 'READY') {
+                selectedOrder.state = 'IN_PROGRESS'
+              }
+              handleCloseModal()
             }
-            handleCloseModal()
-          }
-          }>Estado Anterior</button><button onClick={() => {
-            if (selectedOrder.state === 'PENDING') {
-              selectedOrder.state = 'IN_PROGRESS'
+            }>Estado Anterior</button>
+            <button className={s["modal-footer__confirm"]} onClick={() => {
+              if (selectedOrder.state === 'PENDING') {
+                selectedOrder.state = 'IN_PROGRESS'
 
-            } else if (selectedOrder.state === 'IN_PROGRESS') {
-              selectedOrder.state = 'READY'
+              } else if (selectedOrder.state === 'IN_PROGRESS') {
+                selectedOrder.state = 'READY'
+              }
+              handleCloseModal()
             }
-            handleCloseModal()
-          }
-          }>Confirmar</button></div>
+            }>Confirmar</button></div>
         </>)
     }</Modal>
       <section className={s["pk-kanban"]}>
