@@ -37,6 +37,7 @@ export function OrdersProvider(props: OrdersProviderProps) {
   const pickup = (order: Order) => {
     if (order.state === 'READY') {
       order.state = 'DELIVERED'
+      console.log(order)
     } else {
       alert('El pedido no esta listo')
     }

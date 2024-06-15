@@ -2,6 +2,8 @@ import { Item } from "@/dtos/Item.dto";
 import { Order } from "@/dtos/Order.dto";
 
 
+let intervalMap: Map<string, NodeJS.Timeout> = new Map()
+
 export function getRandomId() {
   const length = 5;
   let result = "";
@@ -40,6 +42,23 @@ export function getRandomItems() {
 
 
   return items
+}
+
+export function orderTimer(order: Order) {
+
+  if (order.orderTime !== 0) {
+    if (intervalMap.has(order.id)) {
+      clearInterval(intervalMap.get(order.id)!)
+      intervalMap.delete(order.id)
+    }
+  } else {
+    if (!intervalMap.has(order.id)) {
+      const intervalId = setInterval(() => {
+        order.orderTime++
+      }, 1000)
+      intervalMap.set(order.id, intervalId)
+    }
+  }
 }
 
 
