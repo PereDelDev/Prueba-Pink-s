@@ -8,6 +8,7 @@ import {
   useEffect,
   useState,
 } from "react";
+import Swal from "sweetalert2";
 
 export type OrdersContextProps = {
   orders: Array<Order>;
@@ -37,11 +38,13 @@ export function OrdersProvider(props: OrdersProviderProps) {
   const pickup = (order: Order) => {
     if (order.state === 'READY') {
       order.state = 'DELIVERED'
-      console.log(order)
     } else {
-      alert('El pedido no esta listo')
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "El pedido no está listo",
+      });
     }
-    //TODO Mejorar La alerta para que quede mas cuidada
   };
 
 
